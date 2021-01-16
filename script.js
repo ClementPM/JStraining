@@ -75,3 +75,19 @@ const italy = describeCountry('Italy', 65, 'Rome');
 const japan = describeCountry('Japan', 165, 'Tokyo');
 
 console.log(france, italy, japan)
+
+
+
+// function declaration
+function calcAge(birthYear) {
+  return 2000 - birthYear;
+}
+const age1 = calcAge(1988)
+
+// function expression 
+const calcAge2 = function(birthYear) {
+  return 2000 -  birthYear;
+}
+const age2 = calcAge2(1987)
+
+console.log(age1, age2)
