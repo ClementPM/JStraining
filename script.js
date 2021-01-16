@@ -91,3 +91,25 @@ const calcAge2 = function(birthYear) {
 const age2 = calcAge2(1987)
 
 console.log(age1, age2)
+
+// EX
+const totalWorldPopulation = 7900
+
+function percentageOfWorld1(population){
+return (population / totalWorldPopulation) * 100;
+}
+const hexagon = percentageOfWorld1(63);
+const china = percentageOfWorld1(1441);
+console.log(hexagon, china);
+
+const percentageOfWorld2 = function (population){
+return (population / totalWorldPopulation) / 100;
+}
+const finland = percentageOfWorld2(13);
+const russia = percentageOfWorld2(299);
+console.log(finland, russia);
+
+
+const percentageOfWorld3 = (population) => (population * totalWorldPopulation) / 100;
+const ecuador = percentageOfWorld3(10);
+console.log(`Ecuador has a population of ${ecuador}`);
