@@ -50,20 +50,6 @@ console.log(`the bill was ${billValue}, the tip was ${tip}, and the total value 
 // const appleJuice = fruitProcessor(6, 0);
 // console.log(appleJuice);
 
-// const calcAverage = (a, b, c) => (a + b + c ) / 3;
-
-// const scoreDolphins = calcAverage(44, 23, 71);
-// const scoreKoalas = calcAverage(65, 54, 49);
-
-// function checkWinner(scoreDolphins, scoreKoalas) {
-//   if (scoreDolphins > scoreKoalas) {
-//     console.log(`Dolphins wins (${scoreDolphins } vs. ${scoreKoalas} `)
-//   } else { 
-//     console.log(`Koalas wins (${scoreKoalas} vs. ${scoreDolphins})`)
-//   }
-// }
-
-// checkWinner();
 
 
 function describeCountry(country, population, capitalCity) {
@@ -78,13 +64,13 @@ console.log(france, italy, japan)
 
 
 
-// function declaration
+//! function declaration, can be used before it's declared
 function calcAge(birthYear) {
   return 2000 - birthYear;
 }
 const age1 = calcAge(1988)
 
-// function expression 
+//! function expression, 
 const calcAge2 = function(birthYear) {
   return 2000 -  birthYear;
 }
@@ -96,20 +82,53 @@ console.log(age1, age2)
 const totalWorldPopulation = 7900
 
 function percentageOfWorld1(population){
-return (population / totalWorldPopulation) * 100;
+  return (population / totalWorldPopulation) * 100;
 }
 const hexagon = percentageOfWorld1(63);
 const china = percentageOfWorld1(1441);
 console.log(hexagon, china);
 
 const percentageOfWorld2 = function (population){
-return (population / totalWorldPopulation) / 100;
+  return (population / totalWorldPopulation) / 100;
 }
 const finland = percentageOfWorld2(13);
 const russia = percentageOfWorld2(299);
 console.log(finland, russia);
 
-
+//! Arrow function, have no this keyword
 const percentageOfWorld3 = (population) => (population * totalWorldPopulation) / 100;
 const ecuador = percentageOfWorld3(10);
 console.log(`Ecuador has a population of ${ecuador}`);
+
+
+
+
+const describePopulation = function(country, population) { 
+  const percentage = percentageOfWorld1(population);
+  const description = `${country} has ${population} million people which is about ${percentage}% of the world`; 
+  console.log(description);
+};
+
+describePopulation('Estonia', 33);
+describePopulation('Sweden', 22);
+describePopulation('Lithuania', 21);
+
+// PART 2 CHALLENGE 1
+
+const calcAverage = (a, b, c) => (a + b + c ) / 3;
+
+const scoreDolphins = calcAverage(44, 23, 71);
+const scoreKoalas = calcAverage(65, 54, 49);
+
+function checkWinner(avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 *  avgKoalas) {
+    console.log(`Dolphins wins (${avgDolphins } vs. ${avgKoalas})`);
+  } else if (avgKoalas  >= 2 *  avgDolphins) {
+    console.log(`Koalas wins (${avgKoalas} vs. ${avgDolphins})`)
+  } else {
+    console.log ('nobody wins');
+  }
+};
+
+checkWinner(scoreDolphins, scoreKoalas);
+checkWinner(333, 99);
