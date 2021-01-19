@@ -159,49 +159,94 @@
 // console.log(neighbours);
 
 // CODING CHALLENGE 2
-function calcTip(bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
+// function calcTip(bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-console.log(bills, tips);
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(bills, tips);
 
-const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(total);
+// const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(total);
 
-// OBJECTS
+// // OBJECTS
 
-const myCountry = {
-  country: 'France',
-  capital: 'Paris',
-  language: 'french',
-  population: 66,
-  neighbours: ['Belgium', 'Spain', 'Italy']
-};
+// const myCountry = {
+//   country: 'France',
+//   capital: 'Paris',
+//   language: 'french',
+//   population: 66,
+//   neighbours: ['Belgium', 'Spain', 'Italy'],
 
-console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`)
+//   describe: function() {
+//     return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital} `
+//   },
 
-myCountry.population += 2;
-console.log(myCountry.population)
+//   checkIsland: function() {
+//     this.isIsland = this.neighbours.length === 0 ? true : false;
+//   }
+// };
+// console.log(myCountry.describe());
+// myCountry.checkIsland();
+// console.log(myCountry);
 
-myCountry['population'] -= 2;
-console.log(myCountry.population)
+
+// console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`)
+
+// myCountry.population += 2;
+// console.log(myCountry.population)
+
+// myCountry['population'] -= 2;
+// console.log(myCountry.population)
 
 
-const jonas = {
-  firstName: 'Jonas', 
-  lastName: 'toto',
-  birthYear: 1991,
-  job: 'teacher',
-  friends: ['Micheal', 'John', 'Marie'],
-  hasDriverLicense: false,
+// const jonas = {
+//   firstName: 'Jonas', 
+//   lastName: 'toto',
+//   birthYear: 1991,
+//   job: 'teacher',
+//   friends: ['Micheal', 'John', 'Marie'],
+//   hasDriverLicense: false,
 
-  getSummary: function() {
-    return `${this.firstName} is 33 years old and has ${this.hasDriverLicense ? 'a' : 'no'} driver licence`
+//   getSummary: function() {
+//     return `${this.firstName} is 33 years old and has ${this.hasDriverLicense ? 'a' : 'no'} driver licence`
+//   }
+// };
+
+// console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`)
+
+// console.log(jonas.getSummary());
+
+
+const mark = {
+  fullName: 'Mark Miller',
+  mass: 78, 
+  height: 1.69,
+
+  calcBMI: function() {
+  this.bmi = this.mass / (this.height * this.height);
+  return this.bmi
   }
 };
 
-console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`)
+const john = {
+  fullName: 'John Smith',
+  mass: 92, 
+  height: 1.95, 
 
-console.log(jonas.getSummary());
+  calcBMI: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi
+  }
+};
+
+mark.calcBMI();
+john.calcBMI();
+console.log(john.bmi, mark.bmi);
+
+if (mark.bmi > john.bmi) {
+  console.log(`${mark.fullName} BMI (${mark.bmi}) is higher than ${john.fullName} (${john.bmi})`)
+} else if (john.bmi > john.bmi){
+  console.log(`${john.fullName} BMI (${john.bmi}) is higher than ${mark.fullName} (${mark.bmi})`)
+};
