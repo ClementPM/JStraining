@@ -159,7 +159,6 @@
 // console.log(neighbours);
 
 // CODING CHALLENGE 2
-
 function calcTip(bill) {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
@@ -170,3 +169,39 @@ console.log(bills, tips);
 
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(total);
+
+// OBJECTS
+
+const myCountry = {
+  country: 'France',
+  capital: 'Paris',
+  language: 'french',
+  population: 66,
+  neighbours: ['Belgium', 'Spain', 'Italy']
+};
+
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`)
+
+myCountry.population += 2;
+console.log(myCountry.population)
+
+myCountry['population'] -= 2;
+console.log(myCountry.population)
+
+
+const jonas = {
+  firstName: 'Jonas', 
+  lastName: 'toto',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Micheal', 'John', 'Marie'],
+  hasDriverLicense: false,
+
+  getSummary: function() {
+    return `${this.firstName} is 33 years old and has ${this.hasDriverLicense ? 'a' : 'no'} driver licence`
+  }
+};
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`)
+
+console.log(jonas.getSummary());
