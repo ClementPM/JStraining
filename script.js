@@ -250,3 +250,35 @@ if (mark.bmi > john.bmi) {
 } else if (john.bmi > john.bmi){
   console.log(`${john.fullName} BMI (${john.bmi}) is higher than ${mark.fullName} (${mark.bmi})`)
 };
+
+
+// FOR
+
+// for (let voter = 1; voter <= 50; voter ++) {
+//   console.log(`Voter number ${voter} is currently voting`)
+// };
+
+const totalWorldPopulation = 7900
+
+function percentageOfWorld1(population){
+  return (population / totalWorldPopulation) * 100;
+}
+
+const populations = [10, 1441, 332, 83]; 
+const percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+  percentages2.push(percentageOfWorld1(populations[i]));
+// const perc = percentageOfWorld1(populations[i]);
+//   percentages2.push(perc);
+}
+console.log(percentages2);
+
+// EXERCICE 2 loop s in loops
+
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  console.log(`this is the first attempt Neighbour: ${listOfNeighbours[i]}`);
+  for (let y = 0; y < listOfNeighbours[i].length; y++)
+    console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+};
