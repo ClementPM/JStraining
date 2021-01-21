@@ -298,26 +298,25 @@ while (i < populations.length) {
 
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const tips = [];
-const total = [];
+const totals = [];
 
 function calcTip(bill) {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
-for (let i = 0; i <= bills.length; i++){
+for (let i = 0; i < bills.length; i++){
 tips.push(calcTip(bills[i]));
-total.push(calcTip(bills[i]) + bills[i]);
+totals.push(calcTip(bills[i]) + bills[i]);
 }
-console.log(tips, total);
-
-
+console.log(tips, totals);
 
 //BONUS
 function calcAverage(arr){
-  return arr.sum / arr.length
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length
 };
-
-const sum = [];
-for (let i = 0; i < bills.length; i++){
-  sum.push(calcAverage(bills[i]));
-};
-console.log(sum);
+console.log(calcAverage([5, 3, 2]));
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
