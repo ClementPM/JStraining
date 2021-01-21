@@ -264,14 +264,14 @@ function percentageOfWorld1(population){
   return (population / totalWorldPopulation) * 100;
 }
 
-const populations = [10, 1441, 332, 83]; 
-const percentages2 = [];
-for (let i = 0; i < populations.length; i++) {
-  percentages2.push(percentageOfWorld1(populations[i]));
-// const perc = percentageOfWorld1(populations[i]);
-//   percentages2.push(perc);
-}
-console.log(percentages2);
+// const populations = [10, 1441, 332, 83]; 
+// const percentages2 = [];
+// for (let i = 0; i < populations.length; i++) {
+//   percentages2.push(percentageOfWorld1(populations[i]));
+// // const perc = percentageOfWorld1(populations[i]);
+// //   percentages2.push(perc);
+// }
+// console.log(percentages2);
 
 // EXERCICE 2 loop s in loops
 
@@ -282,3 +282,42 @@ for (let i = 0; i < listOfNeighbours.length; i++) {
   for (let y = 0; y < listOfNeighbours[i].length; y++)
     console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
 };
+
+// WHILE
+
+const populations = [10, 1441, 332, 83];
+const percentages3 = [];
+
+let i = 0;
+while (i < populations.length) {
+  percentages3.push(percentageOfWorld1(populations[i]));
+  i++;
+}console.log(percentages3);
+
+// CHALLENGE 4
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const total = [];
+
+function calcTip(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+for (let i = 0; i <= bills.length; i++){
+tips.push(calcTip(bills[i]));
+total.push(calcTip(bills[i]) + bills[i]);
+}
+console.log(tips, total);
+
+
+
+//BONUS
+function calcAverage(arr){
+  return arr.sum / arr.length
+};
+
+const sum = [];
+for (let i = 0; i < bills.length; i++){
+  sum.push(calcAverage(bills[i]));
+};
+console.log(sum);
