@@ -17,8 +17,9 @@ document.querySelector('.check').addEventListener(
     // When the number is correct
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'Correct Number';
-    document.querySelector('body').style.backgroundColor = '#60b347'
-    
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
+
     // When input is too high
   } else if (guess > secretNumber) {
     if(score > 1){
@@ -42,12 +43,3 @@ document.querySelector('.check').addEventListener(
     }
   }
 } );
-
-/*
-document.querySelector('.message').textContent = 'try me';
-
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 10;
-
-document.querySelector('.guess').value = 22
-*/
