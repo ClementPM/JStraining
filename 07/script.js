@@ -55,6 +55,7 @@ btnHold.addEventListener('click', function() {
     // check if player score >100
     if (scores[activePlayer] >= 10) {
       playing = false;
+      diceEl.classList.add('hidden');
       document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
       document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
     } else {
