@@ -12,8 +12,8 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
   openingHours: {
@@ -30,12 +30,17 @@ const restaurant = {
       close: 24,
     },
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
 let [first, second] = restaurant.categories;
 console.log(first, second);
 
-[first, second] = [second, first]
+[first, second] = [second, first];
 console.log(first, second);
 
 // Receive 2 return values from a function
@@ -46,3 +51,27 @@ console.log(starter, mainCourse);
 const nested = [2, 4, [5, 6]];
 const [i, , [j, k]] = nested;
 console.log(i, j, k);
+
+// Nested object
+const { fri } = restaurant.openingHours;
+console.log(fri);
+
+const {
+  fri: { open, close },
+} = restaurant.openingHours;
+console.log(open, close);
+
+// Copy Array
+const mainMenucopy = [...restaurant.mainMenu];
+
+// Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Real case
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1"),
+  prompt('Ingredient 2'),
+  prompt('Ingredient 3'),
+];
+restaurant.orderPasta(...ingredients);
