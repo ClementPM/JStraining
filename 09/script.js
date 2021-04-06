@@ -1,5 +1,47 @@
 'use strict';
 
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
 // Coding Challenge #1
 
 /* 
@@ -15,6 +57,34 @@ Suppose we get data from a web service about a certain game (below). In this cha
 TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 GOOD LUCK 😀
 */
+
+// 1.
+const [players1,  players2] = game.players;
+console.log(players1, players2);
+
+// 2.
+const [gk, ...fieldsPlayers] = players1;
+console.log(gk, fieldsPlayers);
+
+// 3.
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+// 4. 
+const players1Final = [...players1, 'thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+
+// 5. 
+const {odds: {team1, x: draw, team2}} = game;
+console.log(team1, draw, team2);
+
+// 6.
+
+
+
+// 7. 
+
+
 
 // Data needed for a later exercise
 const flights =
@@ -85,9 +155,9 @@ const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
 
 // Real case
-const ingredients = [
-  prompt("Let's make pasta! Ingredient 1"),
-  prompt('Ingredient 2'),
-  prompt('Ingredient 3'),
-];
-restaurant.orderPasta(...ingredients);
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1"),
+//   prompt('Ingredient 2'),
+//   prompt('Ingredient 3'),
+// ];
+// restaurant.orderPasta(...ingredients);
