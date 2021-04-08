@@ -79,11 +79,14 @@ const {odds: {team1, x: draw, team2}} = game;
 console.log(team1, draw, team2);
 
 // 6.
-
-
+const printGoals = function(...players) {
+console.log(`${players.length} goals were scored`);
+}; 
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals(...game.scored);
 
 // 7. 
-
+team1 < team2 && console.log('team1 is the winner');
 
 
 // Data needed for a later exercise
